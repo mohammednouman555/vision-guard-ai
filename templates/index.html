@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>VisionGuard AI Dashboard</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            background: #0f172a;
+            color: white;
+        }
+
+        header {
+            background: #020617;
+            padding: 15px;
+            text-align: center;
+            font-size: 24px;
+            color: #38bdf8;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .card {
+            background: #1e293b;
+            margin: 10px;
+            padding: 20px;
+            border-radius: 10px;
+            flex: 1;
+            min-width: 300px;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .status {
+            font-size: 20px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    🛡️ VisionGuard AI Dashboard
+</header>
+
+<div class="container">
+
+    <!-- Live Camera -->
+    <div class="card">
+        <h2>🎥 Live Camera</h2>
+        <img src="/video_feed">
+    </div>
+
+    <!-- Status -->
+    <div class="card">
+        <h2>📊 System Status</h2>
+        <div id="status" class="status">Loading...</div>
+    </div>
+
+    <!-- Intruder -->
+    <div class="card">
+        <h2>📸 Last Intruder</h2>
+        <img id="intruder" src="">
+    </div>
+
+    <!-- Logs -->
+    <div class="card">
+        <h2>📜 Logs</h2>
+        <div id="logs"></div>
+    </div>
+
+</div>
+
+<script>
+    async function updateStatus() {
+        let res = await fetch('/status');
+        let data = await res.json();
+        document.getElementById('status').innerText = data.status;
+    }
+
+    async function updateLogs() {
+        let res = await fetch('/logs');
+        let data = await res.json();
+        document.getElementById('logs').innerHTML = data.join("<br>");
+    }
+
+    function updateIntruder() {
+        document.getElementById('intruder').src = "/intruder?" + new Date().getTime();
+    }
+
+    setInterval(() => {
+        updateStatus();
+        updateLogs();
+        updateIntruder();
+    }, 2000);
+</script>
+
+</body>
+</html>
