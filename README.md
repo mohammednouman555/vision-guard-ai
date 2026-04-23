@@ -144,11 +144,11 @@ Example:
 5️⃣ Configure Email Alerts
 
 - Edit "config.py":
- 
+ ```
 EMAIL = "your_email@gmail.com"
 PASSWORD = "your_app_password"
 RECEIVER_EMAIL = "your_email@gmail.com"
-
+```
 ⚠️ Use Gmail App Password, not your normal password.
 
 ---
