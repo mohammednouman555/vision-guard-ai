@@ -83,26 +83,26 @@ VisionGuard AI provides an active security layer by:
 
 ## 📂 Project Structure
 
-VisionGuardAI/
-│── app.py
-│── config.py
-│── requirements.txt
-│
-├── core/
-│   ├── camera.py
-│   ├── intrusion_detector.py
-│   ├── face_recognition_module.py
-│   ├── alert_system.py
-│   ├── system_lock.py
-│   ├── logger.py
-│
-├── data/
-│   ├── authorized_faces/
-│   ├── intruders/
-│   ├── logs.txt
-│
-├── templates/
-│   └── index.html
+   VisionGuardAI/
+   │── app.py
+   │── config.py
+   │── requirements.txt
+   │
+   ├── core/
+   │   ├── camera.py
+   │   ├── intrusion_detector.py
+   │   ├── face_recognition_module.py
+   │   ├── alert_system.py
+   │   ├── system_lock.py
+   │   ├── logger.py
+   │
+   ├── data/
+   │   ├── authorized_faces/
+   │   ├── intruders/
+   │   ├── logs.txt
+   │
+   ├── templates/
+   │   └── index.html
 
 ---
 
