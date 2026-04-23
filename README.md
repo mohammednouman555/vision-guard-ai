@@ -82,7 +82,7 @@ VisionGuard AI provides an active security layer by:
 ---
 
 ## 📂 Project Structure
-
+```
 VisionGuardAI/
 │
 ├── app.py
@@ -104,7 +104,7 @@ VisionGuardAI/
 │
 ├── templates/
 │   └── index.html
-
+```
 ---
 
 ## ⚙️ Setup Instructions
