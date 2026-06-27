@@ -1,4 +1,5 @@
 .idea/
+.venv
 venv/
 venv310/
 __pycache__/
